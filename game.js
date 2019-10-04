@@ -12,21 +12,15 @@ let items = {
 }
 
 function Slap() {
-  enemy.health -= CalculateDamage(1);
-  enemy.attackCount++;
-  Update();
+  DamageEnemy(1);
 }
 
 function SwordSlash() {
-  enemy.health -= 5 + addMods();
-  enemy.attackCount++;
-  Update();
+  DamageEnemy(5);
 }
 
 function FireBall() {
-  enemy.health -= 10 + addMods();
-  enemy.attackCount++;
-  Update();
+  DamageEnemy(10);
 }
 
 function GiveFire() {
@@ -34,8 +28,13 @@ function GiveFire() {
   Update();
 }
 
-function EquipArmor() {
+function GiveArmor() {
   enemy.modifiers.push(items.armor);
+  Update();
+}
+
+function GiveOil() {
+  enemy.modifiers.push(items.oil);
   Update();
 }
 
@@ -48,8 +47,7 @@ function Update() {
 }
 
 function CalculateDamage(damage) {
-  let mods = addMods();
-  let moddedDamage = damage += mods;
+  let moddedDamage = damage += addMods();
   return moddedDamage <= 0 ? 0 : moddedDamage;
 }
 
@@ -67,10 +65,27 @@ function addMods() {
   let totalModification = 0;
 
   for (let i = 0; i < enemy.modifiers.length; i++) {
-    const item = enemy.modifiers[i];
+    let item = enemy.modifiers[i];
     totalModification += item.modifier;
   }
   return totalModification;
+}
+
+function DamageEnemy(damage) {
+  enemy.health -= CalculateDamage(damage);
+  if (enemy.health < 0) {
+    enemy.health = 0;
+  }
+
+  enemy.attackCount++;
+  Update();
+}
+
+function Reset() {
+  enemy.health = 100;
+  enemy.attackCount = 0;
+  enemy.modifiers = [];
+  Update();
 }
 
 Update();
