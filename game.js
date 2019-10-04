@@ -58,7 +58,7 @@ function CreateModsList() {
     modifiers.push(`${item.name} Modification: ${item.modifier}`)
   });
 
-  return modifiers.join("\n");
+  return "\n" + modifiers.join("\n");
 }
 
 function addMods() {
