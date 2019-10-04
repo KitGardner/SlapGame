@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="game.css">
+  <title>SlapGame</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!--This row contains the boss picture and stats-->
+      <div class="col">
+        <img src="https://placehold.it/200x200" alt="Villain Image">
+      </div>
+      <div class="col">
+        <h3>Name: <span id="enemyName"></span> </h3>
+        <h3>Health: <span id="enemyHealth">200</span></h3>
+        <h3>Times Attacked: <span id="attackCount">0</span></h3>
+        <h3>Modifications: <span id="modifiers">No Modifiers</span></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex flex-column">
+        <button onclick="SwordSlash()">Sword Slash</button>
+        <button onclick="FireBall()">Fireball</button>
+        <button onclick="Slap()">Slap</button>
+        <button>Use Item</button>
+      </div>
+      <div class="col">
+        <button onclick="GiveFire()">Use Fire</button>
+        <button onclick="EquipArmor()">Equips Armor</button>
+      </div>
+    </div>
+    <!---Contains the actions player can use to affect the boss-->
+    <div class="row">
+      <div class="col">
+        <button>Reset</button>
+      </div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+
+</html>
