@@ -101,7 +101,7 @@ function addMods() {
 
 function DamageEnemy(damage) {
   enemy.health -= CalculateDamage(damage);
-  if (enemy.health < 0) {
+  if (enemy.health <= 0) {
     enemy.health = 0;
     enemyDead = true;
   }
