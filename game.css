@@ -1,3 +1,31 @@
-* {
-  outline: 1px solid red;
+#ResetButton{
+  width: 100%;
+}
+
+#ruleBreaker{
+  margin-top: 5%;
+  margin-bottom: -8%;
+  opacity: 0.8;
+}
+
+.WholePage{
+  height: 100vh;
+}
+
+.spacer{
+  height: 20vh;
+}
+
+.scrollable{
+  overflow-y: auto;
+  max-height: 20%
+}
+
+.hidden{
+  display: none;
+}
+
+.modifierToken{
+  display: inline;
+  padding-right: 5px;
 }
