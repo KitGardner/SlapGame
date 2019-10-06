@@ -7,9 +7,9 @@ let enemy = {
 }
 
 let items = {
-  fire: { name: "Fire", modifier: 2, description: "IT BURNS!", imgUrl: "https://placehold.it/30x30", multiplier: 1, count: 5 },
-  armor: { name: "Armor", modifier: -3, description: "My Defense is rock Solid!", imgUrl: "https://placehold.it/30x30", multiplier: 1, count: 1 },
-  explosive: { name: "Explosive", modifier: 20, description: "Harmless explosive. Hope no sudden vibrations occur", imgUrl: "https://placehold.it/35x35", multiplier: 1, count: 1 }
+  fire: { name: "Fire", modifier: 2, description: "IT BURNS!", imgUrl: "flame.png", multiplier: 1, count: 5 },
+  armor: { name: "Armor", modifier: -3, description: "My Defense is rock Solid!", imgUrl: "armor.png", multiplier: 1, count: 1 },
+  explosive: { name: "Explosive", modifier: 20, description: "Harmless explosive. Hope no sudden vibrations occur", imgUrl: "bomb.png", multiplier: 1, count: 1 }
 }
 
 let activeModifierIcons = [];
@@ -83,7 +83,6 @@ function CreateModsList() {
 function addMods() {
   let totalModification = 0;
   let bombsToRemove = []
-
   for (let i = 0; i < enemy.modifiers.length; i++) {
     let item = enemy.modifiers[i];
     totalModification += item.modifier;
@@ -94,7 +93,7 @@ function addMods() {
 
   bombsToRemove.forEach(bomb => {
     let bombIndex = enemy.modifiers.indexOf(bomb)
-    enemy.modifiers.splice(bombIndex);
+    enemy.modifiers.splice(bombIndex, 1);
     RemoveModificationToken("explosive");
   })
   return totalModification;
@@ -138,7 +137,7 @@ function RemoveModificationToken(mod) {
   let elemToRemove = undefined;
 
   modifierList.childNodes.forEach(elem => {
-    if (elem.childNodes[0]["src"] == items[mod].imgUrl) {
+    if (elem.firstChild["src"].includes(items[mod].imgUrl)) {
       elemToRemove = elem;
     }
   })
@@ -153,6 +152,7 @@ function AddModificationToken(mod) {
 
   newTokenElem.classList.add("modifierToken")
   modImgElem.src = items[mod].imgUrl;
+  modImgElem.classList.add("modifierImg", `${mod}`);
 
   let addPlusSign = false;
   if (items[mod].modifier >= 0)
