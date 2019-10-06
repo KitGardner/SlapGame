@@ -5,7 +5,6 @@
 #ruleBreaker{
   margin-top: 5%;
   margin-bottom: -8%;
-  opacity: 0.8;
 }
 
 .WholePage{
@@ -35,7 +34,7 @@
   width:  30px;
 }
 
-.gameArea{
+body{
   background-image: url("background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,7 +45,18 @@
   color: yellow;
 }
 
-.hologram{
+.attackDisplay{
+  background-color: cyan;
+  color: orangered;
+}
+
+.itemDisplay{
+  background-color: turquoise;
+  color: red;
+}
+
+.holographicDisplay{
+  background-color: #0000FF88;
   opacity: 0.7;
 }
 

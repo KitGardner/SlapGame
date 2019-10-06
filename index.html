@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="container gameArea">
+  <div class="container holographicDisplay">
     <div class="row d-flex justify-content-center">
       <!--This row contains the boss picture and stats-->
       <div class="col-md-3 text-center d-flex align-items-center justify-content-center enemyDisplay hologram">
@@ -33,13 +33,13 @@
       </div>
     </div>
     <div class="row pt-5">
-      <div class="col-4 offset-1 d-flex flex-column py-5 justify-content-between  bg-primary">
+      <div class="col-4 offset-1 d-flex flex-column py-5 justify-content-between attackDisplay hologram">
         <button onclick="SwordSlash()" class="btn-lg">Sword Slash</button>
         <button onclick="FireBall()" class="btn-lg">Fireball</button>
         <button onclick="Slap()" class="btn-lg">Slap</button>
         <button class="btn-lg" onclick="UseItem()">Use Item</button>
       </div>
-      <div class="col-4 flex-column py-5 bg-danger justify-content-between ml-3 hidden" id="ruleBreaker">
+      <div class="col-4 flex-column py-5 itemDisplay hologram justify-content-between ml-3 hidden" id="ruleBreaker">
         <button onclick="GiveFire()" class="btn-lg">Use Fire</button>
         <button onclick="GiveArmor()" class="btn-lg">Give Armor</button>
         <button onclick="GiveExplosive()" class="btn-lg">Attach Explosive</button>
@@ -49,7 +49,7 @@
     <!---Contains the actions player can use to affect the boss-->
     <div class="row">
       <div class="col-5 offset-1 pt-5">
-        <button class="mt-5 btn btn-danger" id="ResetButton" onclick="Reset()">Reset</button>
+        <button class="mt-5 btn btn-danger hologram" id="ResetButton" onclick="Reset()">Reset</button>
       </div>
     </div>
   </div>
