@@ -11,16 +11,16 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="row d-flex justify-content-center gameArea">
+  <div class="container gameArea">
+    <div class="row d-flex justify-content-center">
       <!--This row contains the boss picture and stats-->
-      <div class="col-md-3 text-center d-flex align-items-center justify-content-center">
+      <div class="col-md-3 text-center d-flex align-items-center justify-content-center enemyDisplay hologram">
         <img class="img-fluid" src="grog.png" alt="Villain Image">
       </div>
-      <div class="col-md-6 col-sm-12">
-        <div class="d-flex flex-column justify-content-between flex-fill bg-light mt-3">
+      <div class="col-md-6 col-sm-12 enemyDisplay hologram">
+        <div class="d-flex flex-column justify-content-between flex-fill mt-3">
           <h3>Name: <span id="enemyName"></span> </h3>
-          <div class="progress" style="height: 3em;">
+          <div class="progress enemyDisplay" style="height: 3em;">
             <h3>Health: &nbsp;</h3>
             <div id="healthBar" class="progress-bar bg-danger progress-bar-animated" role="progressbar"
               style="width: 80%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="50"><span id="enemyHealth"></span>
